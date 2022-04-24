@@ -58,7 +58,7 @@ displayimg.get('/', function (req, res) { return __awaiter(void 0, void 0, void 
                 File_1 = "".concat(filename, "_").concat(width, "_").concat(height, ".jpg");
                 Pathoffile = void 0;
                 if (!!(0, checkexistencefile_1.default)("".concat(filename, ".jpg"), 'orignal_images')) return [3 /*break*/, 1];
-                res.send("Image does not exist");
+                res.send('Image does not exist');
                 return [3 /*break*/, 9];
             case 1:
                 if (!(req.query.width === undefined &&
@@ -67,11 +67,11 @@ displayimg.get('/', function (req, res) { return __awaiter(void 0, void 0, void 
                 return [3 /*break*/, 9];
             case 2:
                 if (!(width && !height)) return [3 /*break*/, 3];
-                res.send("please enter the new height");
+                res.send('please enter the new height');
                 return [3 /*break*/, 9];
             case 3:
                 if (!(height && !width)) return [3 /*break*/, 4];
-                res.send("please enter the new width");
+                res.send('please enter the new width');
                 return [3 /*break*/, 9];
             case 4:
                 if (!(isNaN(width) || isNaN(height))) return [3 /*break*/, 5];
@@ -79,7 +79,7 @@ displayimg.get('/', function (req, res) { return __awaiter(void 0, void 0, void 
                 return [3 /*break*/, 9];
             case 5:
                 if (!(0, checkexistencefile_1.default)(File_1, 'Resized_images')) return [3 /*break*/, 6];
-                Pathoffile = path_1.default.resolve("images/orignal_images/".concat(File_1));
+                Pathoffile = path_1.default.resolve("images/Resized_images/".concat(File_1)); /* This path is updated */
                 return [3 /*break*/, 8];
             case 6: return [4 /*yield*/, (0, ResizeingFile_1.default)(filename, width, height)];
             case 7:

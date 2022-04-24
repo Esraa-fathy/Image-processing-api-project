@@ -15,14 +15,16 @@ describe('Test endpoint', () => {
   });
   it('Image is not found.', async () => {
     const res = await request.get('/ss/esraa?filename=zaza');
-    expect(res.text).toBe("Image does not exist");
+    expect(res.text).toBe('Image does not exist');
   });
 
   it('Width and height are not valid.', async () => {
     const response = await request.get(
       '/ss/esraa?filename=fjord&width=yz&height=wr'
     );
-    expect(response.text).toBe('Enter valid values for width and height,please.');
+    expect(response.text).toBe(
+      'Enter valid values for width and height,please.'
+    );
   });
 
   it('Resize the image.', async () => {
@@ -31,7 +33,6 @@ describe('Test endpoint', () => {
       .expect('Content-Type', 'image/jpeg')
       .expect(200);
   });
-
 });
 
 describe('Test the checkexistencefile and ResizeingFile', () => {
@@ -40,7 +41,7 @@ describe('Test the checkexistencefile and ResizeingFile', () => {
 
     expect(res).toBe(true);
   });
-  it("Image does not exist", async () => {
+  it('Image does not exist', async () => {
     const res = await check_image('fhjlls.jpg', 'orignal_images');
 
     expect(res).toBe(false);
@@ -54,5 +55,4 @@ describe('Test the checkexistencefile and ResizeingFile', () => {
     const img_resize = await Resize('santamonica', 600, 300);
     expect(img_resize).toEqual('images/Resized_images/santamonica_600_300.jpg');
   });
- 
 });

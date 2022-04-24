@@ -9,7 +9,7 @@ var check_image = function (imgname, foldername) {
     try {
         var pathofimage = path_1.default.resolve("images/".concat(foldername, "/").concat(imgname));
         var check_path = (0, fs_1.existsSync)(pathofimage);
-        return (check_path);
+        return check_path;
     }
     catch (err) {
         console.log(err);

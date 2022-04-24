@@ -76,7 +76,7 @@ describe('Test endpoint', function () {
                 case 0: return [4 /*yield*/, request.get('/ss/esraa?filename=zaza')];
                 case 1:
                     res = _a.sent();
-                    expect(res.text).toBe("Image does not exist");
+                    expect(res.text).toBe('Image does not exist');
                     return [2 /*return*/];
             }
         });
@@ -121,7 +121,7 @@ describe('Test the checkexistencefile and ResizeingFile', function () {
             }
         });
     }); });
-    it("Image does not exist", function () { return __awaiter(void 0, void 0, void 0, function () {
+    it('Image does not exist', function () { return __awaiter(void 0, void 0, void 0, function () {
         var res;
         return __generator(this, function (_a) {
             switch (_a.label) {
